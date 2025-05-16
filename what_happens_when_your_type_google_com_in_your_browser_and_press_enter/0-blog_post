@@ -1,0 +1,85 @@
+🧠 What Happens When You Type <https://www.google.com> and Hit Enter?
+We use the internet constantly — but few people realize the invisible complexity behind something as simple as opening Google.
+
+Here’s a behind-the-scenes look at the remarkable journey your request takes across the internet:
+
+1️⃣ DNS Resolution – "Where is Google?"
+The browser doesn't speak domain names — it needs an IP address.
+
+It checks local and browser caches.
+
+If not found, it asks a DNS resolver (like 8.8.8.8).
+
+This resolver may ask root, TLD, and authoritative servers to find Google’s IP address.
+
+Result: Your browser now knows where to go.
+
+2️⃣ TCP Handshake – "Let’s Talk"
+Using the IP, your browser initiates a three-way handshake with Google’s server:
+
+SYN → SYN-ACK → ACK
+
+This process ensures a reliable connection is in place over TCP/IP.
+
+3️⃣ Firewalls – "Who Are You?"
+Both ends check the traffic:
+
+Your device’s firewall reviews outbound requests.
+
+Google’s firewalls assess inbound traffic, blocking anything suspicious.
+
+4️⃣ HTTPS & SSL/TLS – "Let's Make It Secure"
+Because you typed https://, your connection is encrypted:
+
+Your browser sends a ClientHello listing supported ciphers.
+
+Google responds with ServerHello and its TLS certificate.
+
+Your browser validates it using a Certificate Authority.
+
+A secure, encrypted session is established.
+
+Now, no one can snoop on your data in transit.
+
+5️⃣ Load Balancer – "Who Can Handle This?"
+Your request reaches Google’s load balancer, which:
+
+Routes it to the closest or least-busy server
+
+Ensures speed, redundancy, and fault tolerance
+
+6️⃣ Web Server – "Here’s What You Asked For"
+The request lands on a web server, which:
+
+Serves static content (like HTML or images), or
+
+Forwards the request to an application server for more logic
+
+7️⃣ Application Server – "Processing Your Request"
+Now things get smart:
+
+Google parses your request (maybe a search query)
+
+Applies ranking algorithms
+
+Pulls data as needed
+
+8️⃣ Database – "Let’s Get the Data"
+Google’s application servers query highly distributed databases:
+
+They fetch and rank results
+
+Organize everything for efficient display
+
+⏎ Response & Rendering – "Here You Go!"
+The data travels back:
+
+Application server → Web server → Load balancer → Your browser
+
+Your browser parses HTML, loads CSS, runs JavaScript
+
+Voilà! Google’s homepage or your search results appear.
+
+⏱ All of this? It happens in under a second.
+
+It’s a masterclass in distributed systems, security, and performance — running every time you press "Enter."
